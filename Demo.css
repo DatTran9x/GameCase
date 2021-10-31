@@ -1,0 +1,71 @@
+.game {
+    width: 1000px;
+    height: 400px;
+    border: 1px solid black;
+    margin: auto;
+    background-image: url(BG.jpg);
+    background-size: 1000px 400px;
+}
+
+#son {
+    width: 90px;
+    height: 120px;
+    background-image: url(NVC2.jpg);
+    background-size: 90px 120px;
+    position: relative;
+    top: 280px;
+    left: 90px;
+}
+
+.jump {
+    animation: jump 0.8s linear;
+}
+
+@keyframes jump {
+    0% {
+        top: 280px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 280px;
+    }
+}
+
+#Jumbo {
+    width: 80px;
+    height: 120px;
+    background-image: url("enemy1.jpg");
+    background-size: 80px 120px;
+    position: relative;
+    top: 160px;
+    left: 920px;
+}
+
+@keyframes block {
+
+0%{
+    left: 920px ;
+}
+100%{
+    left: -20px;
+}
+}
+
+.block{
+    animation: block 1.5s infinite linear;
+}
+
+.block1{
+    animation: block 1.4s infinite linear;
+}
+
+.block2{
+    animation: block 1.3s infinite linear;
+}
+
+.block3{
+    animation: block 1.2s infinite linear;
+}
+
