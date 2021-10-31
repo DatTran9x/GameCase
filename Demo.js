@@ -1,5 +1,5 @@
 const son = document.getElementById('son');
-const Jumbo = document.getElementById('Jumbo');
+const jumbo = document.getElementById('jumbo');
 let point;
 let status = false;
 let max = parseInt(localStorage.getItem("point"));
@@ -21,18 +21,18 @@ document.addEventListener("keydown", function (event) {
 
 function block() {
     if (point < 20.7) {
-        Jumbo.classList.add("block");
+        jumbo.classList.add("block");
     } else {
         if (point < 51) {
-            Jumbo.classList.remove('block');
-            Jumbo.classList.add("block1");
+            jumbo.classList.remove('block');
+            jumbo.classList.add("block1");
         } else {
             if (point < 80) {
-                Jumbo.classList.remove('block1');
-                Jumbo.classList.add("block2");
+                jumbo.classList.remove('block1');
+                jumbo.classList.add("block2");
             } else {
-                Jumbo.classList.remove('block2');
-                Jumbo.classList.add("block3");
+                jumbo.classList.remove('block2');
+                jumbo.classList.add("block3");
             }
         }
     }
@@ -53,8 +53,8 @@ function game() {
 function run() {
     if (status === true) {
         let sonTop = parseInt(window.getComputedStyle(son).getPropertyValue("top"));
-        let JumboLeft = parseInt(window.getComputedStyle(Jumbo).getPropertyValue('left'));
-        if (JumboLeft < 180 && JumboLeft > 40 && sonTop >= 230) {
+        let jumboLeft = parseInt(window.getComputedStyle(jumbo).getPropertyValue('left'));
+        if (jumboLeft < 180 && jumboLeft > 40 && sonTop >= 230) {
             gameOver();
         } else {
             point += 0.005;
@@ -68,16 +68,16 @@ function gameOver() {
     if (point < 20) {
         alert('Bạn quá gà!!!');
     }
-    alert('Sơn đã dính Jumbo Vape!');
+    alert('Sơn đã dính jumbo Vape!');
     alert("Sơn vô cùng đau khổ!")
     alert("Score : " + point.toFixed(0.5));
     if (max < point) {
         localStorage.setItem("point", point);
     }
-    Jumbo.classList.remove('block');
-    Jumbo.classList.remove('block1');
-    Jumbo.classList.remove('block2');
-    Jumbo.classList.remove('block3');
+    jumbo.classList.remove('block');
+    jumbo.classList.remove('block1');
+    jumbo.classList.remove('block2');
+    jumbo.classList.remove('block3');
     highScores();
     status = false;
 }
